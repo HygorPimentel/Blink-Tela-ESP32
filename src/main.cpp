@@ -1,19 +1,32 @@
+// AUTOR: Hygor Pimentel
+// DATA: 01/07/2021
+
 #include <Arduino.h>
 #include <SSD1306.h>
 
-#define flag 25
+
+/** Mapeamento de hardware **/
+
+#define flag 25                  
 #define OLED_ADDRES 0x3c
 #define OLED_SDA 4
 #define OLED_SCL 15
 #define OLED_RESET 16
 
-int temp = 0, counter = 0,
-    temp_flag = 2000;
+/** Variaveis Globais **/
+
+int counter   = 0,
+    temp      = 0,
+    temp_flag = 2000; //tempo em ms
 
 
 
+/** Instanciamento de objetos **/
 
 SSD1306 OLED(OLED_ADDRES,OLED_SDA,OLED_SCL);
+
+
+/** Implementação das Funções **/
 
 void display_config()
 {
@@ -32,7 +45,6 @@ void display_config()
 
 void Logica()
 {
-
   if (millis() - temp >= temp_flag)
   {
     digitalWrite(flag,!digitalRead(flag));
@@ -50,10 +62,8 @@ void Logica()
   
   OLED.clear();
   OLED.drawString(0,0,"Flag Desligada");
-  OLED.drawString(0,20,"Qtde Acion. " + String(counter) );
+  OLED.drawString(0,20,"Qtd de Acion: " + String(counter) );
   OLED.display();
-  
-  
 
 }
 
@@ -63,6 +73,7 @@ void setup()
   display_config();
   pinMode(flag,OUTPUT);
   digitalWrite(flag,LOW);
+  
 }
 
 void loop()
