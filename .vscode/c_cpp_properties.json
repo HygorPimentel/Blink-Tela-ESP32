@@ -10,6 +10,7 @@
             "includePath": [
                 "D:/Users/Hygor/Documents/PlatformIO/Projects/Blink/include",
                 "D:/Users/Hygor/Documents/PlatformIO/Projects/Blink/src",
+                "D:/Users/Hygor/Documents/PlatformIO/Projects/Blink/.pio/libdeps//**",
                 "D:/Users/Hygor/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config",
                 "D:/Users/Hygor/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace",
                 "D:/Users/Hygor/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update",
